@@ -1,0 +1,3 @@
+﻿  Źródło.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdlib.h(56,48): error C2381: „exit”: zmiana definicji; element „noreturn” różni się
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\GL\glut.h(146): message : zobacz deklarację „exit”
