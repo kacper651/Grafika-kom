@@ -1,0 +1,3 @@
+﻿  egg.cpp
+C:\Users\wrobl\source\repos\GLUT_egg\GLUT_egg\egg.cpp(240,1): warning C4326: zwracany typ "main" powinien być "int" zamiast "void"
+  GLUT_egg.vcxproj -> C:\Users\wrobl\source\repos\GLUT_egg\Debug\GLUT_egg.exe
