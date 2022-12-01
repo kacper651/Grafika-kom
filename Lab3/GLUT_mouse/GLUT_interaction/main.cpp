@@ -215,8 +215,6 @@ void RenderScene(void)
 
     gluLookAt(viewer[0], viewer[1], viewer[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     // Zdefiniowanie po³o¿enia obserwatora
-    Axes();
-    // Narysowanie osi przy pomocy funkcji zdefiniowanej powy¿ej
 
     if (status == 1)                     // jeœli lewy klawisz myszy wciêniêty
     {
@@ -233,6 +231,9 @@ void RenderScene(void)
         viewer[2] += delta_z * pix2angle;
         glMatrixMode(GL_MODELVIEW);
     }
+
+    Axes();
+    // Narysowanie osi przy pomocy funkcji zdefiniowanej powy¿ej
 
     glColor3f(1.0f, 1.0f, 1.0f);
     // Ustawienie koloru rysowania na bia³y
