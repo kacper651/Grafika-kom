@@ -59,13 +59,10 @@ float RandColor()
 }
 
 
-void Egg()
+//funkcja, ktora wyklucza migotanie macierzy kolorow
+RGBPoint** createColorMatrix()
 {
-    Point3** square_matrix = new Point3*[N];
-    for (int i = 0; i < N; i++)
-        square_matrix[i] = new Point3[N];
-
-    RGBPoint** colors = new RGBPoint* [N];
+    RGBPoint** colors = new RGBPoint * [N];
     for (int i = 0; i < N; i++)
         colors[i] = new RGBPoint[N];
 
@@ -78,6 +75,19 @@ void Egg()
             colors[i][j].b = RandColor();
         }
     }
+
+    return colors;
+}
+
+
+RGBPoint** colors = createColorMatrix();
+
+
+void Egg()
+{
+    Point3** square_matrix = new Point3*[N];
+    for (int i = 0; i < N; i++)
+        square_matrix[i] = new Point3[N];
 
     for (int i = 0; i < N; i++) 
     {
