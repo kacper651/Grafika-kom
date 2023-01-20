@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\wrobl\source\repos\GLUT_tekstury\GLUT_tekstury\main.cpp(653,1): warning C4326: zwracany typ "main" powinien być "int" zamiast "void"
+  GLUT_tekstury.vcxproj -> C:\Users\wrobl\source\repos\GLUT_tekstury\Debug\GLUT_tekstury.exe
