@@ -17,6 +17,8 @@ var _cubeTexture;
 var _uv;
 var _sampler;
 
+var requestId;
+
 var rotationSpeed = 0.001; 
 var zoomRatio = -6;
 
@@ -156,53 +158,10 @@ function gl_initBuffers () {
 
    var triangleVertices = [
 
-      -1,-1,-1,     0, 0,
-
-       1,-1,-1,     1, 0,
-
-       1, 1,-1,     1, 1,
-
-      -1, 1,-1,     0, 1,
-
-      -1,-1, 1,     0, 0,
-
-       1,-1, 1,     1, 0,
-
-       1, 1, 1,     1, 1,
-
-      -1, 1, 1,     0, 1,
-
-      -1,-1,-1,     0, 0,
-
-      -1, 1,-1,     1, 0,
-
-      -1, 1, 1,     1, 1,
-
-      -1,-1, 1,     0, 1,
-
-       1,-1,-1,     0, 0,
-
-       1, 1,-1,     1, 0,
-
-       1, 1, 1,     1, 1,
-
-       1,-1, 1,     0, 1,
-
-      -1,-1,-1,     0, 0,
-
-      -1,-1, 1,     1, 0,
-
-       1,-1, 1,     1, 1,
-
-       1,-1,-1,     0, 1,
-
-      -1, 1,-1,     0, 0,
-
-      -1, 1, 1,     1, 0,
-
-       1, 1, 1,     1, 1,
-
-       1, 1,-1,     0, 1
+      -1, -1, -1,    0, 0,
+      -1, 1, -1,    1, 0,
+      1, 0, -1,      0, 1,
+      0, 0, 1,    1, 1, 
 
    ];
          
@@ -222,28 +181,9 @@ function gl_initBuffers () {
    var triangleFaces = [
 
       0,1,2,
-
-      0,2,3,
-
-      4,5,6,
-
-      4,6,7,
-
-      8,9,10,
-
-      8,10,11,
-
-      12,13,14,
-
-      12,14,15,
-
-      16,17,18,
-
-      16,18,19,
-
-      20,21,22,
-
-      20,22,23
+      3,0,1,
+      3,0,2,
+      3,1,2
 
    ];
 
@@ -390,16 +330,18 @@ function gl_draw() {
 
       gl_ctx.bindBuffer(gl_ctx.ELEMENT_ARRAY_BUFFER, _triangleFacesBuffer);
 
-      gl_ctx.drawElements(gl_ctx.TRIANGLES, 5*2*3, gl_ctx.UNSIGNED_SHORT, 0);
+      gl_ctx.drawElements(gl_ctx.TRIANGLES, 4*3, gl_ctx.UNSIGNED_SHORT, 0);
 
       gl_ctx.flush();
 
  
 
-      window.requestAnimationFrame(animate);
+      requestId = window.requestAnimationFrame(animate);
 
    };
-
+   if(requestId){
+      window.cancelAnimationFrame(requestId);
+   }
    animate(0);
 
 }
